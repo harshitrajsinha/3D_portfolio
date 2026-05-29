@@ -135,7 +135,7 @@ jobs:
       contents: read
     
     env:
-      IMAGE_NAME: harshitrajsinha/nike
+      IMAGE_NAME: harshitrajsinha/3dportfolio
       IMAGE_TAG: ${{ github.sha }}
 
     steps:
@@ -218,10 +218,10 @@ jobs:
           path: 'docker-image.sbom.json'
 
       - name: Start app (for OWASP ZAP testing)
-      - run: docker run -d -p 5173:5173 $IMAGE_NAME:$IMAGE_TAG
+        run: docker run -d -p 5173:5173 $IMAGE_NAME:$IMAGE_TAG
 
       - name: Wait for app (for OWASP ZAP testing)
-      - run: sleep 20
+        run: sleep 20
 
       - name: OWASP ZAP Scan
         uses: zaproxy/action-baseline@v0.14.0
