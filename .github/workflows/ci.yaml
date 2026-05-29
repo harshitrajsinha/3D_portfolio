@@ -133,6 +133,7 @@ jobs:
 
     permissions:
       contents: read
+      issues: write
     
     env:
       IMAGE_NAME: harshitrajsinha/3dportfolio
